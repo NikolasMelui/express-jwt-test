@@ -1,5 +1,5 @@
 import express from 'express';
-// import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 const config = {
   port: 3000
@@ -17,6 +17,10 @@ app.post('/api/posts', (req, res) => {
   res.json({
     message: 'Post was created...'
   });
+});
+
+app.post('/api/login', (req, res) => {
+  jwt.sign();
 });
 
 app.listen(config.port, () =>

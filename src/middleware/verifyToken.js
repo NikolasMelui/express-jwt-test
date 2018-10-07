@@ -18,6 +18,7 @@ export default (req, res, next) => {
     // Use next middleware argumant (next function)
     next();
   } else {
+    console.err('middleware error');
     res.sendStatus(403);
   }
 };

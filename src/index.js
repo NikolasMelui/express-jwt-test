@@ -7,6 +7,12 @@ const config = {
 
 const app = express();
 
+app.get('/api', (req, res) => {
+  res.json({
+    message: "Hello, i'm an API"
+  });
+});
+
 app.listen(config.port, () =>
   console.log(`Server is listening on port ${config.port}`)
 );

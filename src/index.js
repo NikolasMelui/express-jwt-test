@@ -20,7 +20,15 @@ app.post('/api/posts', (req, res) => {
 });
 
 app.post('/api/login', (req, res) => {
-  jwt.sign();
+  // Mock the user
+  const user = {
+    id: 1,
+    username: 'nikolasmelui',
+    email: 'slak@samaradom.ru'
+  };
+  jwt.sign(user, 'secretkey', (err, token) => {
+    res.json({ token });
+  });
 });
 
 app.listen(config.port, () =>

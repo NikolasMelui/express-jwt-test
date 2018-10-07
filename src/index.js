@@ -13,6 +13,12 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.post('/api/posts', (req, res) => {
+  res.json({
+    message: 'Post was created...'
+  });
+});
+
 app.listen(config.port, () =>
   console.log(`Server is listening on port ${config.port}`)
 );
